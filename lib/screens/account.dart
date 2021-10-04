@@ -15,7 +15,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         FocusManager.instance.primaryFocus?.unfocus();
       },
       child: Scaffold(
@@ -34,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(height: 15),
+            SizedBox(height: 50),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -49,7 +49,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     style: TextStyle(
                       fontSize: headerTextSizeSmall,
                       fontWeight: FontWeight.w900,
-                      color: categoryHeaderColor,
+                      color: !this.newAccount
+                          ? categoryHeaderColor
+                          : normalTextColor,
                     ),
                   ),
                 ),
@@ -64,7 +66,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     style: TextStyle(
                       fontSize: headerTextSizeSmall,
                       fontWeight: FontWeight.w900,
-                      color: normalTextColor,
+                      color: this.newAccount
+                          ? categoryHeaderColor
+                          : normalTextColor,
                     ),
                   ),
                 ),

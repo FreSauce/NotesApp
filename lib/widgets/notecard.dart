@@ -43,8 +43,9 @@ class NoteCard extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Expanded(
-              child: Wrap(
-                direction: Axis.vertical,
+              child: Row(
+                // direction: Axis.vertical,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     note.author,
